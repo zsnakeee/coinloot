@@ -84,7 +84,8 @@ class Payments extends Component
 
     public function delete($id)
     {
-
+        Payment::find($id)->delete();
+        session()->flash('success', 'Payment deleted successfully.');
     }
 
     public function changeStatus()
