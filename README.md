@@ -80,3 +80,7 @@ Admin Dashboard
 ## Video Overview
 
 https://github.com/user-attachments/assets/310b90dd-4776-4382-a9b2-c160d4e3f129
+
+## License
+
+The Coinloot script is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
