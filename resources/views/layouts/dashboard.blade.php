@@ -312,7 +312,7 @@
             <p class="clearfix mb-0 text-center">
                     <span class=" d-block d-md-inline-block mt-25">
                         <i data-feather="chevrons-left"></i>
-                        Developed by <a href="https://www.facebook.com/snake2019/" target="_blank">Ziad Talaat</a><i
+                        Developed by <a href="https://wa.me/+201127070346" target="_blank">Ziad Talaat</a><i
                             data-feather="chevrons-right"></i>
                     </span>
             </p>

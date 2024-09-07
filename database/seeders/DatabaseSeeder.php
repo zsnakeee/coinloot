@@ -19,13 +19,12 @@ class DatabaseSeeder extends Seeder
         User::create([
             'username' => 'snake',
             'email' => 'ziadtallat33@gmail.com',
-            'password' => \Hash::make('ziadxddd'),
+            'password' => \Hash::make('password'),
             'registered_ip' => "197.165.233.159",
             'last_login_ip' => "197.165.233.159",
             'last_seen_at' => now(),
             'user_agent' => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/9",
             'is_admin' => true,
-            'profile_photo_path' => 'avatars/snake.png',
         ]);
 
         Payment::create([
