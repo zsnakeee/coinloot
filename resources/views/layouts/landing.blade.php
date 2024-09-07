@@ -51,18 +51,18 @@
         <link href="{{ asset('landing-assets/css/vendor.min.css') }}" rel="stylesheet"/>
         <link href="{{ asset('landing-assets/css/style.css') }}" rel="stylesheet"/>
 
-{{--        <script async src="https://www.googletagmanager.com/gtag/js?id=G-"></script>--}}
-{{--        <script>--}}
-{{--            window.dataLayer = window.dataLayer || [];--}}
+        {{--        <script async src="https://www.googletagmanager.com/gtag/js?id=G-"></script>--}}
+        {{--        <script>--}}
+        {{--            window.dataLayer = window.dataLayer || [];--}}
 
-{{--            function gtag() {--}}
-{{--                dataLayer.push(arguments);--}}
-{{--            }--}}
+        {{--            function gtag() {--}}
+        {{--                dataLayer.push(arguments);--}}
+        {{--            }--}}
 
-{{--            gtag('js', new Date());--}}
+        {{--            gtag('js', new Date());--}}
 
-{{--            gtag('config', 'G-');--}}
-{{--        </script>--}}
+        {{--            gtag('config', 'G-');--}}
+        {{--        </script>--}}
 
         <style>
             .header .navbar .navbar-nav > li.active > a,
@@ -128,11 +128,25 @@
     <body class="body-scroll">
 
         <div class="wrapper clearfix" id="wrapperParallax">
-
             <header class="header header-light header-sticky">
-                <nav class="navbar navbar-sticky navbar-expand-lg" id="primary-menu" style="background-color: #161d31">
-                    <div class="container">
+                <nav class="navbar navbar-sticky navbar-expand-lg flex-column" id="primary-menu"
+                     style="background-color: #161d31">
 
+                    {{-- CoinHub Banner Sponser --}}
+                    <div class="container-fluid position-static d-block pb-2 mb-2"
+                         style="background-color: #01c853 !important; z-index: 99999">
+                        <div class="container">
+                            <a
+                                style="color: #ffffff; font-size: 16px; font-weight: 700; margin-left: 10px; text-decoration: none;"
+                                href="https://coinhub.ziadt.dev"
+                                target="_blank">
+                                🚀 Discover the Future of Finance at CoinHub! <span style="margin-left: 5px;">Learn More <i class="fa fa-arrow-right"></i></span>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="container">
                         <a class="logo navbar-brand" href="{{ route('home') }}">
                             <img class="logo logo-dark" src="{{ asset('app-assets/images/logo/logo.png') }}"
                                  width="200px"
@@ -141,11 +155,9 @@
                                  width="200px"
                                  alt="{{ config('app.name') }}"/>
                         </a>
-
                         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
                                 data-target="#navbarContent" aria-expanded="false">
-                    <span class="navbar-toggler-icon" style="color: #01c853">
-                    </span>
+                            <span class="navbar-toggler-icon" style="color: #01c853"></span>
                         </button>
 
                         @php
@@ -161,7 +173,8 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" data-scroll="scrollTo" href="{{ href('features') }}">Features</a>
+                                    <a class="nav-link" data-scroll="scrollTo"
+                                       href="{{ href('features') }}">Features</a>
                                 </li>
 
                                 <li class="nav-item">

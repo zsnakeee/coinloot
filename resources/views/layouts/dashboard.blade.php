@@ -58,9 +58,20 @@
     <body class="horizontal-layout horizontal-menu  navbar-floating footer-static  " data-open="hover"
           data-menu="horizontal-menu" data-col="">
 
+        {{-- CoinHub Banner Sponser --}}
+        <div class="container-fluid position-fixed d-block text-center"
+             style="background-color: #01c853 !important; z-index: 99999; padding-bottom: 5px">
+            <a
+                style="color: #ffffff; font-size: 16px; font-weight: 700; margin-left: 10px; text-decoration: none;"
+                href="https://coinhub.ziadt.dev"
+                target="_blank">
+                🚀 Discover the Future of Finance at CoinHub! <span style="margin-left: 5px;">Learn More <i class="fa fa-arrow-right"></i></span>
+            </a>
+        </div>
+
         <!-- BEGIN: Header-->
         <nav
-            class="header-navbar navbar-expand-lg navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center"
+            class="header-navbar navbar-expand-lg navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center" style="top: 25px"
             data-nav="brand-center">
             <div class="navbar-header d-xl-block d-none">
                 <ul class="nav navbar-nav">
@@ -201,7 +212,7 @@
         <!-- BEGIN: Main Menu-->
         <div class="horizontal-menu-wrapper">
             <div
-                class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-dark navbar-shadow menu-border container-xxl"
+                class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-dark navbar-shadow menu-border container-xxl" style="top: 77px"
                 role="navigation" data-menu="menu-wrapper" data-menu-type="floating-nav">
                 <div class="navbar-header">
                     <ul class="nav navbar-nav flex-row">
