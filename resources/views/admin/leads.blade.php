@@ -29,13 +29,13 @@
                                 <td>
                                     <div class="d-flex align-items-center">
                                         <div class="avatar" style="margin-right: 1.5rem; font-size: calc(12.8px);">
-                                            <img src="{{ asset('app-assets/images/portrait/small/'. $lead->user->avatar) }}"
+                                            <img src="{{ $lead->user->avatar() }}"
                                                  alt="Avatar" height="30" width="30">
                                         </div>
                                         <div>
-                                            <div class="font-weight-bolder">{{ $lead->user->username }}</div>
+                                            <div class="font-weight-bolder">{{ $lead->user->name() }}</div>
                                             <div class="font-small-2 text-muted">
-                                                {{ $lead->user->firstname . ' ' . $lead->user->lastname }}
+                                                {{ $lead->user->email }}
                                             </div>
                                         </div>
                                     </div>
@@ -61,10 +61,10 @@
                     {{ $leads->onEachSide(0)->links() }}
                 </div>
             </div>
-    </div>
+        </div>
 
-@endsection
+        @endsection
 
-@push('scripts')
-    <script src="{{ asset('app-assets/js/scripts/pages/dashboard-analytics.js') }}"></script>
+        @push('scripts')
+            <script src="{{ asset('app-assets/js/scripts/pages/dashboard-analytics.js') }}"></script>
 @endpush
