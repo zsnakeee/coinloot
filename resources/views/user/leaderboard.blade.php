@@ -16,14 +16,14 @@
                          class="congratulations-img-right" alt="card-img-right"/>
                     <div class="avatar avatar-xl bg-primary shadow">
                         <div class="avatar-content">
-                            <img src="{{ $winners->first()->avatar() }}" alt="{{ $winners->first()->name() }}"
+                            <img src="{{ $winners->first()?->avatar() }}" alt="{{ $winners->first()?->name() }}"
                                  height="30" width="30">
                         </div>
                     </div>
                     <div class="text-center">
-                        <h1 class="mb-1 text-white">Congratulations {{ $winners->first()->username }},</h1>
+                        <h1 class="mb-1 text-white">Congratulations {{ $winners->first()?->username }},</h1>
                         <p class="card-text m-auto w-75">
-                            You have done <strong>{{ $winners->first()->total_points }} point</strong>, more points this
+                            You have done <strong>{{ $winners->first()?->total_points }} point</strong>, more points this
                             year.
                         </p>
                     </div>
