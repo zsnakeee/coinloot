@@ -107,7 +107,7 @@
                             @endif
 
                             <button class="offer-btn" data-bs-toggle="modal" data-bs-target="#model1"
-                                    onclick="showOfferwall('{{ Str::replace('{user_id}', auth()->user()->id, $offerwall->url) }}')">
+                                    onclick="showOfferwall('{{ Str::replace('{user_id}', auth()->user()->id, $offerwall->iframe_url) }}')">
                                 <img class="offer-img" src="{{ Storage::Url($offerwall->photo_path) }}" alt="">
                             </button>
                         @endforeach
@@ -128,7 +128,7 @@
                         @foreach($offerwalls as $offerwall)
                             @if($offerwall->name == 'CPX Research')
                                 <button class="offer-btn" data-bs-toggle="modal" data-bs-target="#model1"
-                                        onclick="showOfferwall('{{ Str::replace('{user_id}', auth()->user()->id, $offerwall->url) }}')">
+                                        onclick="showOfferwall('{{ Str::replace('{user_id}', auth()->user()->id, $offerwall->iframe_url) }}')">
                                     <img class="offer-img" src="{{ Storage::Url($offerwall->photo_path) }}" alt="">
                                 </button>
                             @endif
