@@ -18,22 +18,20 @@ class SettingsController extends Controller
         $user = Auth::user();
 
         $request->validate([
-            'firstname' => ['required', 'string', 'max:255'],
-            'lastname' => ['required', 'string', 'max:255'],
+            'password' => ['string', 'min:8'],
             'image' => ['image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
         ]);
+
+        if ($request->password) {
+            $user->password = bcrypt($request->password);
+            $user->save();
+        }
 
         if (isset($request->image)) {
             $imageName = time() . '.' . $request->image->extension();
             $request->image->move(public_path('app-assets/images/portrait/small/'), $imageName);
 
             $user->avatar = $imageName;
-            $user->firstname = $request->firstname;
-            $user->lastname = $request->lastname;
-            $user->save();
-        } else {
-            $user->firstname = $request->firstname;
-            $user->lastname = $request->lastname;
             $user->save();
         }
 

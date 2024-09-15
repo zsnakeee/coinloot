@@ -8,13 +8,13 @@
         <div class="card-header border-bottom">
             <h4 class="card-title">Profile Details</h4>
         </div>
-        <div class="card-body py-2 my-25">
+        <div class="card-body py-1">
             <form class="validate-form" method="POST" action="{{ route('user.settings.update') }}"
                   enctype="multipart/form-data">
                 @csrf
 
                 @if(session('success'))
-                    <div class="alert alert-success">
+                    <div class="alert alert-success opacity-100">
                         <div class="alert-body">
                             <p>{{ session('success') }}</p>
                         </div>
@@ -22,7 +22,7 @@
                 @endif
 
                 @if (count($errors) > 0)
-                    <div class="alert alert-danger">
+                    <div class="alert alert-danger opacity-100">
                         <div class="alert-body">
                             @foreach ($errors->all() as $error)
                                 <p>{{ $error }}</p>
@@ -52,19 +52,14 @@
 
                 <div class="row mt-2 pt-50">
                     <div class="col-12 col-sm-6 mb-1">
-                        <label class="form-label" for="accountFirstName">First Name</label>
-                        <input type="text" class="form-control" id="accountFirstName" name="firstname"
-                               value="{{ auth()->user()->firstname }}" data-msg="Please enter first name"/>
-                    </div>
-                    <div class="col-12 col-sm-6 mb-1">
-                        <label class="form-label" for="accountLastName">Last Name</label>
-                        <input type="text" class="form-control" id="accountLastName" name="lastname" placeholder="Doe"
-                               value="{{ auth()->user()->lastname }}" data-msg="Please enter last name"/>
-                    </div>
-                    <div class="col-12 col-sm-6 mb-1">
                         <label class="form-label" for="accountEmail">Email</label>
                         <input type="email" class="form-control" id="accountEmail" name="email" placeholder="Email"
                                value="{{ auth()->user()->email }}" disabled/>
+                    </div>
+                    <div class="col-12 col-sm-6 mb-1">
+                        <label class="form-label" for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password"
+                               placeholder="********" data-msg=""/>
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-success mt-1 me-1">Save changes</button>
