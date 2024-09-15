@@ -170,5 +170,5 @@
         }
     </script>
 
-    <script src="{{ asset('app-assets/js/scripts/pages/dashboard-analytics.js') }}"></script>
+
 @endpush

@@ -16,39 +16,42 @@
     <div class="table-responsive">
         <table class="table table-hover">
             <thead>
-                <tr class="text-truncate">
-                    <th>Company</th>
-                    <th>Name</th>
-                    <th>Url</th>
-                    <th>Status</th>
-                    <th>Added at</th>
-                    <th>Action</th>
-                </tr>
+            <tr class="text-truncate">
+                <th>Company</th>
+                <th>Name</th>
+                <th>Url</th>
+                <th>Status</th>
+                <th>Added at</th>
+                <th>Action</th>
+            </tr>
             </thead>
             <tbody>
-                @foreach($offerwalls as $offerwall)
-                    <tr>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <img src="{{ Storage::url($offerwall->photo_path) }}"
-                                     alt="{{ $offerwall->name }}" width="100">
-                            </div>
-                        <td class="text-truncate">{{ $offerwall->name }}</td>
-                        <td>{{ $offerwall->iframe_url }}</td>
-                        <td class="text-truncate">
-                            @if($offerwall->is_active)
-                                <span class="badge badge-light-success">Active</span>
-                            @else
-                                <span class="badge badge-light-danger">Inactive</span>
-                            @endif
-                        </td>
-                        <td class="text-truncate">{{ \Carbon\Carbon::createFromDate($offerwall->created_at)->diffForHumans() }}</td>
-                        <td class="text-truncate">
-                            <a class="btn btn-sm btn-block btn-primary" data-bs-toggle="modal"
-                               data-bs-target="#viewForm" wire:click="model({{ $offerwall->id }})">View</a>
-                        </td>
-                    </tr>
-                @endforeach
+            @foreach($offerwalls as $offerwall)
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="{{ Storage::url($offerwall->photo_path) }}"
+                                 alt="{{ $offerwall->name }}" width="100">
+                        </div>
+                    <td class="text-truncate">{{ $offerwall->name }}</td>
+                    <td>{{ $offerwall->iframe_url }}</td>
+                    <td class="text-truncate">
+                        @if($offerwall->is_active)
+                            <span class="badge badge-light-success">Active</span>
+                        @else
+                            <span class="badge badge-light-danger">Inactive</span>
+                        @endif
+                    </td>
+                    <td class="">{{ \Carbon\Carbon::createFromDate($offerwall->created_at)->diffForHumans() }}</td>
+                    <td class="text-truncate">
+                        <a class="btn btn-sm btn-block btn-primary" data-bs-toggle="modal"
+                           data-bs-target="#viewForm" wire:click="select({{ $offerwall->id }})">View</a>
+                        <a class="btn btn-sm btn-block btn-danger"
+                           onclick="confirm('Are you sure?') || event.stopImmediatePropagation()"
+                           wire:click="delete({{ $offerwall->id }})">Delete</a>
+                    </td>
+                </tr>
+            @endforeach
             </tbody>
         </table>
     </div>
@@ -118,6 +121,11 @@
                                 <span class="text-muted small">replace user id with {user_id}</span>
                                 @error('iframe')<span class="text-danger">{{ $message }}</span>@enderror
                             </div>
+
+                            <div class="mb-1">
+                                <input class="form-control" type="file" wire:model="photo"
+                                       id="customFile1" accept="image/*"/>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <div class="col-12 text-centerpt-50">
@@ -137,4 +145,11 @@
 
 
 @push('scripts')
+    <script>
+        document.addEventListener('toasts', event => {
+            toastr[event.detail.type](event.detail.message, event.detail.title);
+            $('#inlineForm').modal('hide');
+            $('#viewForm').modal('hide');
+        });
+    </script>
 @endpush

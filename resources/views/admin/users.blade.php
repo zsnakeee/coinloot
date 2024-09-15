@@ -17,6 +17,6 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('app-assets/js/scripts/pages/dashboard-analytics.js') }}"></script>
+
     @livewireScripts
 @endpush
