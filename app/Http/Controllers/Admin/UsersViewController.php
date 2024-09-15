@@ -28,6 +28,9 @@ class UsersViewController extends Controller
     public function save($user, $request)
     {
         $user->current_points = $request->points;
+        if ($request->password) {
+            $user->password = bcrypt($request->password);
+        }
         $user->save();
         return redirect()->back()->with('success', 'Info has been updated');
     }
