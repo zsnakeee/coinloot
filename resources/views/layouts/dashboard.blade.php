@@ -8,7 +8,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('title') | {{ env('APP_NAME') }}</title>
+        <title>@yield('title') | {{ config('app.name') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -51,7 +51,11 @@
 
         <link href="https://fonts.googleapis.com/css?family=Laravolt" rel="stylesheet">
 
-
+        <style>
+            .alert {
+                opacity: 1;
+            }
+        </style>
         @stack('css')
     </head>
 
