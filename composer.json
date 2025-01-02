@@ -16,7 +16,8 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "laravolt/avatar": "^5.0",
-        "livewire/livewire": "^2.10"
+        "livewire/livewire": "^2.10",
+        "opcodesio/log-viewer": "^3.12"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
