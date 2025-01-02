@@ -133,16 +133,16 @@
                      style="background-color: #161d31">
 
                     {{-- CoinHub Banner Sponser --}}
-                    <div class="container-fluid position-static d-block pb-2 mb-2"
+                    <div class="container-fluid position-static d-block mb-2"
                          style="background-color: #01c853 !important; z-index: 99999">
-                        <div class="container">
+                        <div class="container p-2">
                             <a
+                                class=""
                                 style="color: #ffffff; font-size: 16px; font-weight: 700; margin-left: 10px; text-decoration: none;"
                                 href="https://coinhub.ziadt.dev"
                                 target="_blank">
                                 🚀 Discover the Future of Finance at CoinHub! <span style="margin-left: 5px;">Learn More <i class="fa fa-arrow-right"></i></span>
                             </a>
-
                         </div>
                     </div>
 

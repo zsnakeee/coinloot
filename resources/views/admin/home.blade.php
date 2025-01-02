@@ -16,7 +16,7 @@
                     <h2 class="fw-bolder mt-1">${{ number_format($profit['today'], 2) }}</h2>
                     <p class="card-text">Today Profit</p>
                 </div>
-                <div id="gained-chart"></div>
+                <div class="card-body"></div>
             </div>
         </div>
         <!-- Points Chart Card ends -->
@@ -33,7 +33,7 @@
                     <h2 class="fw-bolder mt-1">${{ number_format($profit['this_month'], 2) }}</h2>
                     <p class="card-text">This Month Profit</p>
                 </div>
-                <div id="order-chart"></div>
+                <div class="card-body"></div>
             </div>
         </div>
         <!-- Points Chart Card ends -->
@@ -50,7 +50,7 @@
                     <h2 class="fw-bolder mt-1">${{ number_format($profit['total'], 2) }}</h2>
                     <p class="card-text">Total Profit</p>
                 </div>
-                <div id="all-order-chart"></div>
+                <div class="card-body"></div>
             </div>
         </div>
         <!-- Points Chart Card ends -->
